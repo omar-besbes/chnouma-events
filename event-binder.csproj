@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>event_binder</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
+        <UpToDateCheckBuilt Include="postcss.config.js" Set="Css" />
+        <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SQLite" Version="3.13.0" />
+      <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
+    </ItemGroup>
+
+    <Target Name="Tailwind" BeforeTargets="Build">
+        <Exec Command="npm run css:build" />
+    </Target>
+
+</Project>
