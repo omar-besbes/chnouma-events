@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "event-binder", "event-binder.csproj", "{9DD9C752-9FAF-4299-A99F-ECEE30966631}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chnouma-events", "chnouma-events.csproj", "{9DD9C752-9FAF-4299-A99F-ECEE30966631}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
