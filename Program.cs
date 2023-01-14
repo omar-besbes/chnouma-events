@@ -1,6 +1,12 @@
+using chnouma_events.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<CalendarContext>(
+    options => options.UseSqlite(builder.Configuration.GetConnectionString("SQLite"))
+);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

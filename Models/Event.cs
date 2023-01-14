@@ -19,7 +19,9 @@ public class Event
     public string Description { get; set; }
     
     [Required]
-    public virtual Club HostClub { get; set; }
+    public virtual int CalendarId { get; set; }
+    [Required]
+    public virtual Calendar Calendar { get; set; }
 
     [Required]
     [DataType(DataType.Date)]

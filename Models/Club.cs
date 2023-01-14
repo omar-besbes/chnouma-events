@@ -19,5 +19,8 @@ public class Club
     public string Description { get; set; }
     
     [Required]
-    public virtual ICollection<User> Members { get; set; }
+    public virtual List<User> Members { get; set; }
+    
+    [Required]
+    public virtual Calendar Calendar { get; set; }
 }
