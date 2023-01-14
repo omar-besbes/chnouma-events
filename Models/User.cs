@@ -28,8 +28,14 @@ public class User
     
     [Required]
     public virtual University University { get; set; }
+    
+    [Required]
+    public virtual List<Club> Clubs { get; set; }
+    
+    [Required]
+    public virtual Calendar Calendar { get; set; }
 
-    public User(string firstName, string lastName, string phoneNumber, string university)
+    public User(string firstName, string lastName, string phoneNumber)
     {
         Id = _nextId++;
         FirstName = firstName;

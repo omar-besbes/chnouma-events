@@ -10,5 +10,5 @@ public class Calendar
     public int Id { get; set; }
     
     [Required]
-    public virtual University University { get; set; }
+    public virtual List<Event> Events { get; set; }
 }

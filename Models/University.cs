@@ -14,4 +14,8 @@ public class University
     [StringLength(100)]
     [Column("name")]
     public string Name { get; set; }
+    
+    [Required]
+    public virtual int CalendarId { get; set; }
+    public virtual Calendar Calendar { get; set; }
 }
