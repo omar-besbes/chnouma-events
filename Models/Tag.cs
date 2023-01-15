@@ -15,5 +15,5 @@ public class Tag
     [Column("name")]
     public string Name { get; set; }
 
-    [ForeignKey("event")] public virtual List<Event> TaggedEvents { get; set; }
+    [NotMapped] public virtual List<Event> TaggedEvents { get; set; }
 }

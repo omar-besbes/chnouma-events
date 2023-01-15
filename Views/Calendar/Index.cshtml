@@ -1,0 +1,115 @@
+﻿@model IEnumerable<chnouma_events.Models.Event>
+
+@{
+    ViewData["Title"] = "Calendar";
+    string[] days = { "Monday", "Tuesday", "Wednesday", "Friday", "Saturday", "Sunday" };
+    DateTime[] times = { };
+    DateTime currentWeek = DateTime.Today.AddDays(-1 * (int)(DateTime.Today.DayOfWeek));
+    int startTime = 7 * 60;
+    int endTime = 19 * 60;
+    int gap = 60;
+
+    for (int i = startTime; i <= endTime; i += gap)
+    {
+        times.Append(new DateTime(
+            currentWeek.Year,
+            currentWeek.Month,
+            currentWeek.Day,
+            i / 60,
+            i % 60,
+            0
+            ));
+    }
+}
+
+<section class="calendar-container">
+    <div class="side-panel event">
+        <div class="head">
+            <button class="add">
+                <img height="18px" src="~/assets/icons/bookmark.svg" alt="bookmark-icon">
+                <span> Add to Bucket List </span>
+            </button>
+
+            <a class="exit">
+                <img height="16px" src="~/assets/icons/exit.svg" alt="exit-icon">
+            </a>
+        </div>
+
+        <div class="scrollable">
+            <h2 class="date">
+                <span> Thursday 19 April </span>
+                <span> 8:30 </span>
+            </h2>
+
+            <h1 class="title"> Forum JEI INSAT</h1>
+
+            <div class="about">
+                <h3 class="about-title">
+                    About the Event
+                </h3>
+                <p class="about-description">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+
+            <div class="tags">
+                <h3 class="tags-title">
+                    Tags
+                </h3>
+                <ul class="tags-elements">
+                    <li class="tag">Entertainment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-panel">
+        <h1 class="title">
+            Event Calendar
+        </h1>
+        <div class="calendar">
+            <div class="head">
+                <div class="date">
+                    <img src="~/assets/icons/calendar.svg" alt="calendar">
+                    <span> April, 17 to 22 </span>
+                </div>
+                <div class="arrows">
+                    <span class="arrow-backward">
+                        <img src="~/assets/icons/arrowBack.svg" alt="arrow-back">
+                    </span>
+                    <span class="arrow-forward">
+                        <img src="~/assets/icons/arrowForward.svg" alt="arrow-forward">
+                    </span>
+                </div>
+            </div>
+            <table class="tb">
+                <thead>
+                <tr>
+                    <th></th>
+                    @{
+                        foreach (var day in days)
+                        {
+                            <th> @day </th>
+                        }
+                    }
+                </tr>
+                </thead>
+                <tbody>
+                @{
+                    foreach (var time in times)
+                    {
+                        <tr>
+                            <th> @time.ToLongTimeString() </th>
+                            @{
+                                foreach (var day in days)
+                                {
+                                    <th> @day </th>
+                                }
+                            }
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

@@ -19,9 +19,9 @@ public class Club
 
     [Required] [NotMapped] public virtual List<User> Members { get; set; }
     
-    [Required] [ForeignKey("university")] public int UniversityId { get; set; }
+    [Required] [NotMapped] public int UniversityId { get; set; }
     public virtual University University { get; set; }
 
-    [Required] [ForeignKey("calendar")] public int CalendarId { get; set; }
+    [Required] [NotMapped] public int CalendarId { get; set; }
     public virtual Calendar Calendar { get; set; }
 }

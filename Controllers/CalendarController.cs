@@ -19,12 +19,4 @@ public class CalendarController : Controller
         var events = _repository.GetAllEvents();
         return View(events);
     }
-
-    [HttpGet]
-    [Route("{university}")]
-    public IActionResult University(string university)
-    {
-        var events = _repository.GetAllUniversityEvents(university);
-        return View(events);
-    }
 }

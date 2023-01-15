@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Event>
+
+@{
+    Layout = null;
+}
+
+<section class="side-panel featured-events">
+    @{
+        foreach (var e in Model)
+        {
+            <div class="featured-event">
+                <div class="head">
+                    <h1 class="title"> @e.Name </h1>
+                    <span>
+                        @e.StartDate.ToLongDateString()
+                    </span>
+                </div>
+            </div>
+        }
+    }
+</section>

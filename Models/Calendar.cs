@@ -10,5 +10,5 @@ public class Calendar
 
     [Key] [Column("id")] public int Id { get; private set; }
 
-    [Required] [ForeignKey("event")] public virtual List<Event> Events { get; set; }
+    [Required] [NotMapped] public virtual List<Event> Events { get; set; }
 }

@@ -265,3 +265,21 @@ body::-webkit-scrollbar {
   font-weight: normal;
   border: 1px solid var(--text-grey);
 }
+
+.featured-events {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.featured-event {
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--brand-dark);
+}
+
+.featured-event .head {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

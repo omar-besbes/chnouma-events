@@ -25,9 +25,9 @@ public class User
     [Column("phone_number")]
     public string PhoneNumber { get; set; }
 
-    [Required] [ForeignKey("university")] public virtual University University { get; set; }
+    [Required] [NotMapped] public virtual University University { get; set; }
 
-    [Required] [ForeignKey("club")] public virtual List<Club> Clubs { get; set; }
+    [Required] [NotMapped] public virtual List<Club> Clubs { get; set; }
 
-    [Required] [ForeignKey("calendar")] public virtual Calendar Calendar { get; set; }
+    [Required] [NotMapped] public virtual Calendar Calendar { get; set; }
 }

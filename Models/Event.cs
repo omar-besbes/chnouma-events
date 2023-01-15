@@ -27,8 +27,5 @@ public class Event
     [Column("end_date")]
     public DateTime EndDate { get; set; }
 
-    [Required] [ForeignKey("calendar")] public int CalendarId { get; set; }
-    public virtual Calendar Calendar { get; set; }
-    
-    [Required] [ForeignKey("tag")] public virtual List<Tag> Tags { get; set; }
+    [Required] [NotMapped] public virtual List<Tag> Tags { get; set; }
 }
