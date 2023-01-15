@@ -1,5 +1,7 @@
-﻿using System.Data.SQLite;
+﻿using System.ComponentModel;
+using System.Data.SQLite;
 using chnouma_events.Models;
+using SQLitePCL;
 
 namespace chnouma_events.Data;
 
@@ -10,6 +12,7 @@ public interface ICalendarRepository : IDisposable
     public IEnumerable<Event> GetAllClubEvents(int id);
     public IEnumerable<Event> GetAllUserEvents(int id);
     public void AddEvent(Event e);
+    public void DeleteEvent(int id);
     public void Save();
 }
 
@@ -87,6 +90,11 @@ public class CalendarRepository : ICalendarRepository
     public void AddEvent(Event e)
     {
         _context.Events.Add(e);
+    }
+    
+    public void DeleteEvent(int id)
+    {
+        _context.Events.Remove(_context.Events.Find(id));
     }
 
     public void Save()
