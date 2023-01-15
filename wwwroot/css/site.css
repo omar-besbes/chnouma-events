@@ -70,6 +70,10 @@ body::-webkit-scrollbar {
   background-color: var(--brand-red);
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 /* authenticated layout styling */
 
 .content {
@@ -264,4 +268,49 @@ body::-webkit-scrollbar {
 .calendar .tb tr {
   font-weight: normal;
   border: 1px solid var(--text-grey);
+}
+
+.content-title{
+  font-size: 25px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: var(--text-light-grey);
+}
+
+.form-container{
+  background-color: var(--brand-dark);
+  padding: 40px;
+  max-height: calc(100vh - 320px);
+}
+
+.form-container > form {
+  max-height: calc(100vh - 320px);
+  overflow: auto;
+}
+
+.form-container .form-group{
+  width: 500px;
+}
+.form-container .form-control {
+  background-color: var(--brand-light-dark);
+  height: 40px;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: lighter;
+  border-radius: 5px;
+  color: var(--text-light-grey);
+}
+.button{
+  background-color: red;
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.form-container h2 b{
+  color: var(--brand-red);
 }
