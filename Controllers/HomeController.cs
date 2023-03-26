@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using event_binder.Models;
+using chnouma_events.Models;
 
-namespace event_binder.Controllers;
+namespace chnouma_events.Controllers;
 
 public class HomeController : Controller
 {

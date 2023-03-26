@@ -1,4 +1,4 @@
-namespace event_binder.Models;
+namespace chnouma_events.Models;
 
 public class ErrorViewModel
 {

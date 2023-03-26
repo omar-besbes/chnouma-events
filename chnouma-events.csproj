@@ -4,22 +4,18 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>event_binder</RootNamespace>
+        <RootNamespace>chnouma_events</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
         <UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
-        <UpToDateCheckBuilt Include="postcss.config.js" Set="Css" />
-        <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.32" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.32" />
       <PackageReference Include="SQLite" Version="3.13.0" />
       <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
     </ItemGroup>
-
-    <Target Name="Tailwind" BeforeTargets="Build">
-        <Exec Command="npm run css:build" />
-    </Target>
 
 </Project>
